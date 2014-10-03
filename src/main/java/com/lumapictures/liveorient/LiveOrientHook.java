@@ -23,7 +23,7 @@ public class LiveOrientHook extends ORecordHookAbstract {
         if (queueSock == null) {
             log.debug("Initializing ZeroMQ...");
             queueCtx = ZMQ.context(1);
-            queueSock = queueCtx.socket(ZMQ.REP);
+            queueSock = queueCtx.socket(ZMQ.PUB);
             queueSock.bind("tcp://*:5555");
         }
     }
@@ -38,7 +38,7 @@ public class LiveOrientHook extends ORecordHookAbstract {
     private void publish(String action, ORecord<?> record) {
         initZMQ();
         log.info("Publishing: %s", action);
-        // TODO: enqueue!
+        queueSock.send("nothing to see here... move along...");
     }
 
     @Override
