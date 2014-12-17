@@ -1,0 +1,7 @@
+<handlers>
+    <handler class="com.lumapictures.liveorient.LiveOrientHook" position="REGULAR">
+        <parameters>
+            <parameter name="queuePort" value="5555"/>
+        </parameters>
+    </handler>
+</handlers>
